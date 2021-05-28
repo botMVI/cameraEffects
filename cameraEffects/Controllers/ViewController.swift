@@ -18,14 +18,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cameraCapture()
+        sliderConfig()
+        creatingLabel()
+        
         imageView.backgroundColor = .red
         imageView.frame = CGRect(x: 0, y: 0, width: size, height: size)
         imageView.center = view.center
         self.view.addSubview(imageView)
-        
-        cameraCapture()
-        sliderConfig()
-        creatingLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,32 +76,18 @@ class ViewController: UIViewController {
         self.view.addSubview(mySlider)
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//
-//    }
-    
     @objc func sliderValueDidChange(_ sender:UISlider!) {
-        print("Slider value changed")
-        
         let value = sender.value
-//        label.text = "\(value)"
+        label.text = "\(value)"
         
-        imageView.frame = CGRect(x: 0, y: 0, width: size * CGFloat(value), height: size * CGFloat(value))
+        imageView.frame = CGRect(x: 0, y: 0,
+                                 width: size * CGFloat(value),
+                                 height: size * CGFloat(value))
         imageView.center = view.center
-        
-        
-        // Use this code below only if you want UISlider to snap to values step by step
-        let roundedStepValue = round(sender.value / step) * step
-        sender.value = roundedStepValue
-        
-        print("Slider step value \(Int(roundedStepValue))")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
