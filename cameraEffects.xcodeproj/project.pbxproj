@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D55A4032266198250006F180 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55A4031266198250006F180 /* AppUtility.swift */; };
 		D5ADA53D265FF5B0007F5FD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADA53C265FF5B0007F5FD4 /* AppDelegate.swift */; };
 		D5ADA53F265FF5B0007F5FD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADA53E265FF5B0007F5FD4 /* SceneDelegate.swift */; };
 		D5ADA541265FF5B0007F5FD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADA540265FF5B0007F5FD4 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D55A4031266198250006F180 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 		D5ADA539265FF5B0007F5FD4 /* cameraEffects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraEffects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5ADA53C265FF5B0007F5FD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5ADA53E265FF5B0007F5FD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D55A4030266197F60006F180 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D55A4031266198250006F180 /* AppUtility.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D5ADA530265FF5B0007F5FD4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +66,40 @@
 		D5ADA53B265FF5B0007F5FD4 /* cameraEffects */ = {
 			isa = PBXGroup;
 			children = (
-				D5ADA53C265FF5B0007F5FD4 /* AppDelegate.swift */,
-				D5ADA53E265FF5B0007F5FD4 /* SceneDelegate.swift */,
-				D5ADA540265FF5B0007F5FD4 /* ViewController.swift */,
+				D55A4030266197F60006F180 /* Model */,
 				D5ADA542265FF5B0007F5FD4 /* Main.storyboard */,
-				D5ADA545265FF5B2007F5FD4 /* Assets.xcassets */,
-				D5ADA547265FF5B2007F5FD4 /* LaunchScreen.storyboard */,
+				D5ADA553265FF721007F5FD4 /* Controllers */,
+				D5ADA552265FF6F3007F5FD4 /* Supporting files  */,
 				D5ADA54A265FF5B2007F5FD4 /* Info.plist */,
 			);
 			path = cameraEffects;
+			sourceTree = "<group>";
+		};
+		D5ADA552265FF6F3007F5FD4 /* Supporting files  */ = {
+			isa = PBXGroup;
+			children = (
+				D5ADA554265FF738007F5FD4 /* Delegate */,
+				D5ADA545265FF5B2007F5FD4 /* Assets.xcassets */,
+				D5ADA547265FF5B2007F5FD4 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files ";
+			sourceTree = "<group>";
+		};
+		D5ADA553265FF721007F5FD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5ADA540265FF5B0007F5FD4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5ADA554265FF738007F5FD4 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D5ADA53C265FF5B0007F5FD4 /* AppDelegate.swift */,
+				D5ADA53E265FF5B0007F5FD4 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +133,7 @@
 				TargetAttributes = {
 					D5ADA538265FF5B0007F5FD4 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -137,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55A4032266198250006F180 /* AppUtility.swift in Sources */,
 				D5ADA541265FF5B0007F5FD4 /* ViewController.swift in Sources */,
 				D5ADA53D265FF5B0007F5FD4 /* AppDelegate.swift in Sources */,
 				D5ADA53F265FF5B0007F5FD4 /* SceneDelegate.swift in Sources */,
@@ -286,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P2H6D9L7L;
 				INFOPLIST_FILE = cameraEffects/Info.plist;
@@ -295,6 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ilstud.cameraEffects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,6 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P2H6D9L7L;
 				INFOPLIST_FILE = cameraEffects/Info.plist;
