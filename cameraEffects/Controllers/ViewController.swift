@@ -92,12 +92,11 @@ class ViewController: UIViewController {
         let value = sender.value
         label.text = "\(value)"
         
-        redImageView.frame = CGRect(x: 0, y: 0,
-                                    width: size * CGFloat(value),
-                                    height: size * CGFloat(value))
-        redImageView.center = view.center
+        redImageView.frame = CGRect(x: 200, y: 150,
+                                    width: -size * CGFloat(value),
+                                    height: -size * CGFloat(value))
         
-        blueImageView.frame = CGRect(x: 100, y: 50,
+        blueImageView.frame = CGRect(x: 200, y: 150,
                                      width: size * CGFloat(value),
                                      height: size * CGFloat(value))
     }
