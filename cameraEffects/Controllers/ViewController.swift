@@ -12,7 +12,9 @@ class ViewController: UIViewController {
     
     let step: Float = 10.0
     let label = UILabel()
-    var imageView = UIImageView()
+    let redImageView = UIImageView()
+    let blueImageView = UIImageView()
+    
     var size: CGFloat = 250
     
     override func viewDidLoad() {
@@ -21,11 +23,7 @@ class ViewController: UIViewController {
         cameraCapture()
         sliderConfig()
         creatingLabel()
-        
-        imageView.backgroundColor = .red
-        imageView.frame = CGRect(x: 0, y: 0, width: size, height: size)
-        imageView.center = view.center
-        self.view.addSubview(imageView)
+        elementsOnScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +62,20 @@ class ViewController: UIViewController {
         self.view = view
     }
     
+    func elementsOnScreen() {
+        
+        redImageView.backgroundColor = .red
+        redImageView.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        redImageView.center = view.center
+        
+        blueImageView.backgroundColor = .blue
+        blueImageView.frame = CGRect(x: 100, y: 50, width: size, height: size)
+        
+        self.view.addSubview(redImageView)
+        self.view.addSubview(blueImageView)
+        
+    }
+    
     func sliderConfig() {
         let mySlider = UISlider(frame:CGRect(x: 50, y: 600, width: 300, height: 20))
         mySlider.minimumValue = 0
@@ -80,10 +92,14 @@ class ViewController: UIViewController {
         let value = sender.value
         label.text = "\(value)"
         
-        imageView.frame = CGRect(x: 0, y: 0,
-                                 width: size * CGFloat(value),
-                                 height: size * CGFloat(value))
-        imageView.center = view.center
+        redImageView.frame = CGRect(x: 0, y: 0,
+                                    width: size * CGFloat(value),
+                                    height: size * CGFloat(value))
+        redImageView.center = view.center
+        
+        blueImageView.frame = CGRect(x: 100, y: 50,
+                                     width: size * CGFloat(value),
+                                     height: size * CGFloat(value))
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,8 +109,8 @@ class ViewController: UIViewController {
 
 
 /*
- void mainImage( out vec4 fragColor, in vec2 fragCoord )
- {
+ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
+ 
  float aberrationAmount =  0.1 + abs(iMouse.y / iResolution.y / 8.0);
  
  vec2 uv = fragCoord.xy / iResolution.xy;
